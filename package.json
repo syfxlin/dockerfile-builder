@@ -1,0 +1,49 @@
+{
+  "name": "dockerfile-builder",
+  "version": "1.0.0",
+  "description": "Dockerfile builder",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "report:coverage": "npm run test:coverage && codecov",
+    "pkg": "pkg dist/index.js -o bin/dus --targets node14-linux-x64"
+  },
+  "keywords": [
+    "CLI",
+    "Buildtool",
+    "Starter"
+  ],
+  "author": "Otstar Lin",
+  "license": "MIT",
+  "dependencies": {
+    "boxen": "^5.1.1",
+    "commander": "^8.2.0",
+    "dotenv": "^10.0.0",
+    "fs-extra": "^10.0.0",
+    "klaw-sync": "^6.0.0",
+    "pkg": "^5.3.2",
+    "twing": "^5.0.2",
+    "yaml": "^1.10.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.12",
+    "@types/jest": "^27.0.1",
+    "@types/klaw-sync": "^6.0.1",
+    "@types/node": "^16.9.1",
+    "@types/nunjucks": "^3.2.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "codecov": "^3.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.2.0",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}
