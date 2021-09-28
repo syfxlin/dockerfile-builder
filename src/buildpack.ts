@@ -37,6 +37,13 @@ export default async function processBuildpack(options: Options) {
     __env: process.env,
     __process: process,
   };
+  // move env file
+  if (service.env_file) {
+    await fs.copy(
+      path.resolve(options.env),
+      path.join(dir.project, service.env_file)
+    );
+  }
   // init template engine
   const loader = new TwingLoaderRelativeFilesystem();
   const twig = new TwingEnvironment(loader, { autoescape: false });
