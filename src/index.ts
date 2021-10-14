@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program } from "commander";
-import processBuildpack from "./buildpack";
+import build from "./build";
 
 program
   .option("-e --env <path>", "Config env file", ".env")
@@ -8,7 +8,7 @@ program
   .option("-d --directory <path>", "Templates directory", "templates")
   .option("-o --output <path>", "Dockerfile output dir", "dockerfile")
   .action(async (options) => {
-    await processBuildpack({
+    await build({
       env: options.env,
       config: options.config,
       directory: options.directory,
